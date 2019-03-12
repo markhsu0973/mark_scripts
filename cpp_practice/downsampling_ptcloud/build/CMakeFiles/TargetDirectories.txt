@@ -1,0 +1,7 @@
+/home/mark/mark_scripts/cpp_practice/downsampling_ptcloud/build/CMakeFiles/install.dir
+/home/mark/mark_scripts/cpp_practice/downsampling_ptcloud/build/CMakeFiles/list_install_components.dir
+/home/mark/mark_scripts/cpp_practice/downsampling_ptcloud/build/CMakeFiles/rebuild_cache.dir
+/home/mark/mark_scripts/cpp_practice/downsampling_ptcloud/build/CMakeFiles/voxel_grid.dir
+/home/mark/mark_scripts/cpp_practice/downsampling_ptcloud/build/CMakeFiles/install/strip.dir
+/home/mark/mark_scripts/cpp_practice/downsampling_ptcloud/build/CMakeFiles/install/local.dir
+/home/mark/mark_scripts/cpp_practice/downsampling_ptcloud/build/CMakeFiles/edit_cache.dir
