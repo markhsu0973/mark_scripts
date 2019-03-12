@@ -1,0 +1,3 @@
+/home/mark/mark_scripts/cpp_practice/least_squares/build/CMakeFiles/edit_cache.dir
+/home/mark/mark_scripts/cpp_practice/least_squares/build/CMakeFiles/rebuild_cache.dir
+/home/mark/mark_scripts/cpp_practice/least_squares/build/CMakeFiles/least_squares.dir
