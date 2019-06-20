@@ -1,17 +1,15 @@
 #include <iostream>
 #include <thread>
-
-using namespace std;
-
-void test_func2( int i )
+ 
+void foo()
 {
-  cout << i << endl;
+    std::this_thread::sleep_for(std::chrono::seconds(1));
 }
-
-int main( int argc, char** argv )
+  
+int main()
 {
-  thread mThread( test_func2, 23 );
-  mThread.join();
-
-  return 0;
+    std::thread t(foo);
+    std::cout << "before joining,joinable=" << std::boolalpha << t.joinable() << std::endl;
+    t.join();
+    std::cout << "after joining, joinable=" << std::boolalpha << t.joinable() << '\n';
 }
