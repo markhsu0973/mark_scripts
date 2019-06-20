@@ -11,10 +11,4 @@ iostream
 -
 thread
 -
-condition_variable
--
-mutex
--
-unistd.h
--
 
