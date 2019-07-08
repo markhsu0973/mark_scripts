@@ -1,27 +1,67 @@
-#include <iostream>       // std::cout
-#include <thread>         // std::thread
-#include <mutex>          // std::mutex
+#include <iostream>
+#include <thread>
+#include <condition_variable>
+#include <mutex>
 
-volatile int counter(0); // non-atomic counter
-std::mutex mtx_;           // locks access to counter
+#include <unistd.h>
 
-void attempt_10k_increases() {
-	mtx_.lock();
+using namespace std;
 
-    for (int i=0; i<10; ++i) {
-        ++counter;        
+bool ready1_ = false ;
+bool ready2_ = false ;
+
+
+void foo(const int& n) {
+
+    for (int i = 0; i < n; i++)
+    {
+
+        while (!ready1_) {
+
+        }
+        std::cout << "foo function: ";
+        std::cout << "The product of 2 by " << i << " is " << 2 * i << std::endl ;
+        ready2_ = true ;
+        ready1_ = false;
     }
-    std::cout << "count: " << counter << "\n";
-    mtx_.unlock();
+
+    //
+}
+void OutputValue( int n )
+{
+
+    for (int i = 0; i < n; i++)
+    {
+
+        cout << "OutputValue: " << i << "\n";
+
+        ready1_ = true ;
+
+
+        while (!ready2_) {
+
+        }
+        ready2_ = false ;
+
+    }
+  //
+
 }
 
-int main (int argc, const char* argv[]) {
-    std::thread threads[10];
-    for (int i=0; i<10; ++i)
-        threads[i] = std::thread(attempt_10k_increases);
+int main( int argc, char** argv )
+{
 
-    for (auto& th : threads) th.join();
-    std::cout << counter << " successful increases of the counter.\n";
+  cout << "\nCall function with thread" << endl;
+  thread mThread1( OutputValue, 3 );
+  std::cout << "Call the 2nd function foo\n" ; 
+  thread mThread2(foo, 3);
 
-    return 0;
+  if (mThread1.joinable()) {
+      mThread1.join();    
+  }
+  if (mThread2.joinable()) {
+      mThread2.join();    
+  }
+
+  return 0;
 }
