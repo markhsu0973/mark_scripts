@@ -34,7 +34,7 @@ void OutputValue( int n )
 {
     for (int i = 0; i < n; i++)
     {
-        std::cout<<"OutputValue fuc i = "<<i<<"\n";
+        std::cout<<"OutputValue fuc i = "<<i<<"\t";
         ready1_ = true ;
         cv1_.notify_one() ;
         std::unique_lock<std::mutex> lock2(mtx1_) ;
@@ -51,9 +51,9 @@ int main( int argc, char** argv )
 {
 
   cout << "\nCall function with thread" << endl;
-  thread mThread1( OutputValue, 10 );
+  thread mThread1( OutputValue, 30 );
   std::cout << "Call the 2nd function foo\n" ; 
-  thread mThread2(foo, 10);
+  thread mThread2(foo, 30);
 
   if (mThread1.joinable()) {
       mThread1.join();    
