@@ -1,45 +1,27 @@
-#include <iostream>
-#include <thread>
+#include <iostream>       // std::cout
+#include <thread>         // std::thread
+#include <mutex>          // std::mutex
 
-using namespace std;
+volatile int counter(0); // non-atomic counter
+std::mutex mtx_;           // locks access to counter
 
-class funcObj
-{
-public:
-  int iData;
-  // std::cout << "class: declare iData\n";
-  funcObj()
-  {
-    iData = 0;
-    std::cout << "class: init iData\n";
-  }
+void attempt_10k_increases() {
+	mtx_.lock();
 
-  void operator()()
-  {
-  	std::cout << "class: iData is"<<iData<<"\n";
-    ++iData;
-    std::cout << "class: iData add 1\n";
-    std::cout << "class: iData is"<<iData<<"\n";
-  }
-};
+    for (int i=0; i<10; ++i) {
+        ++counter;        
+    }
+    std::cout << "count: " << counter << "\n";
+    mtx_.unlock();
+}
 
-int main( int argc, char** argv )
-{
-  funcObj co;
+int main (int argc, const char* argv[]) {
+    std::thread threads[10];
+    for (int i=0; i<10; ++i)
+        threads[i] = std::thread(attempt_10k_increases);
 
-  // copy
-  std::cout << "start thread 1\n";
-  thread mThread1( co );
-  std::cout << "thread 1 using copy\n";
-  mThread1.join();
-  cout << co.iData << endl;
+    for (auto& th : threads) th.join();
+    std::cout << counter << " successful increases of the counter.\n";
 
-  // reference
-  std::cout << "start thread 1\n";
-  thread mThread2( ref( co ) );
-  std::cout << "thread 2 using copy\n";
-  mThread2.join();
-  cout << co.iData << endl;
-
-  return 0;
+    return 0;
 }
