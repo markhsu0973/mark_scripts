@@ -9,13 +9,19 @@ bool thread_stop_flag_ = false;
 
 void OutputValue()
 {
-	while(!thread_start_flag_){}
-
-	std::cout << "thread loop \n";
+	std::cout << "wait for start thread ! \n";
 	int i = 1;
-	while(true){
+	while(!thread_start_flag_){
 		std::cout << i << " secs \n";
 		i++;
+		sleep(1);
+	}
+
+	std::cout << "thread loop \n";
+	int j = 1;
+	while(true){
+		std::cout << j << " secs \n";
+		j++;
 		sleep(1);
 		if (thread_stop_flag_){
 			return;
