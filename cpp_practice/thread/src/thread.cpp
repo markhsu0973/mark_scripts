@@ -2,65 +2,41 @@
 #include <thread>
 #include <condition_variable>
 #include <mutex>
-
 #include <unistd.h>
 
-using namespace std;
+bool thread_start_flag_ = false;
+bool thread_stop_flag_ = false;
 
-std::condition_variable cv1_ ;
-std::condition_variable cv2_ ;
-std::mutex mtx1_ ;
-std::mutex mtx2_ ;
-bool ready1_ = false ;
-bool ready2_ = false ;
-
-
-void foo(const int& n) {
-    for (int i = 0; i < n; i++)
-    {
-        std::unique_lock<std::mutex> lock1(mtx1_) ;
-        while (!ready1_) {
-        	cv1_.wait(lock1) ;
-        }
-        std::cout << "foo function: ";
-        std::cout << "The product of 2 by " << i << " is " << 2 * i << std::endl ;
-        ready2_ = true ;
-        ready1_ = false;
-        lock1.unlock() ;
-        cv2_.notify_one() ;
-    }
-}
-void OutputValue( int n )
+void OutputValue()
 {
-    for (int i = 0; i < n; i++)
-    {
-        std::cout<<"OutputValue fuc i = "<<i<<"\t";
-        ready1_ = true ;
-        cv1_.notify_one() ;
-        std::unique_lock<std::mutex> lock2(mtx1_) ;
-        while (!ready2_) {
-        	cv2_.wait(lock2) ;
-        }
-        lock2.unlock() ;
-        ready2_ = false ;
+	while(!thread_start_flag_){}
 
-    }
+	std::cout << "thread loop \n";
+	int i = 1;
+	while(true){
+		std::cout << i << " secs \n";
+		i++;
+		sleep(1);
+		if (thread_stop_flag_){
+			return;
+		}
+	}
+ 
 }
 
 int main( int argc, char** argv )
 {
-
-  cout << "\nCall function with thread" << endl;
-  thread mThread1( OutputValue, 30 );
-  std::cout << "Call the 2nd function foo\n" ; 
-  thread mThread2(foo, 30);
-
-  if (mThread1.joinable()) {
-      mThread1.join();    
-  }
-  if (mThread2.joinable()) {
-      mThread2.join();    
-  }
+	std::cout << "main loop\n";
+	std::cout << "creat a thread and after 3 secs thread will be start !! \n";
+	std::thread mThread1(OutputValue);
+	sleep(3);
+	thread_start_flag_ = true;
+	std::cout << "After 5 secs thread will be stop \n";
+	sleep(5);
+	thread_stop_flag_ = true;
+	if (mThread1.joinable()) {
+	  mThread1.join();    
+	}
 
   return 0;
 }
