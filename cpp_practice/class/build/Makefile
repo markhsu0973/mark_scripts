@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named this_pointer1
+
+# Build rule for target.
+this_pointer1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 this_pointer1
+.PHONY : this_pointer1
+
+# fast build rule for target.
+this_pointer1/fast:
+	$(MAKE) -f CMakeFiles/this_pointer1.dir/build.make CMakeFiles/this_pointer1.dir/build
+.PHONY : this_pointer1/fast
+
+#=============================================================================
 # Target rules for targets named this_pointer2
 
 # Build rule for target.
@@ -124,17 +137,44 @@ this_pointer2/fast:
 .PHONY : this_pointer2/fast
 
 #=============================================================================
-# Target rules for targets named this_pointer1
+# Target rules for targets named class_practice
 
 # Build rule for target.
-this_pointer1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 this_pointer1
-.PHONY : this_pointer1
+class_practice: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 class_practice
+.PHONY : class_practice
 
 # fast build rule for target.
-this_pointer1/fast:
-	$(MAKE) -f CMakeFiles/this_pointer1.dir/build.make CMakeFiles/this_pointer1.dir/build
-.PHONY : this_pointer1/fast
+class_practice/fast:
+	$(MAKE) -f CMakeFiles/class_practice.dir/build.make CMakeFiles/class_practice.dir/build
+.PHONY : class_practice/fast
+
+src/class_practice.o: src/class_practice.cpp.o
+
+.PHONY : src/class_practice.o
+
+# target to build an object file
+src/class_practice.cpp.o:
+	$(MAKE) -f CMakeFiles/class_practice.dir/build.make CMakeFiles/class_practice.dir/src/class_practice.cpp.o
+.PHONY : src/class_practice.cpp.o
+
+src/class_practice.i: src/class_practice.cpp.i
+
+.PHONY : src/class_practice.i
+
+# target to preprocess a source file
+src/class_practice.cpp.i:
+	$(MAKE) -f CMakeFiles/class_practice.dir/build.make CMakeFiles/class_practice.dir/src/class_practice.cpp.i
+.PHONY : src/class_practice.cpp.i
+
+src/class_practice.s: src/class_practice.cpp.s
+
+.PHONY : src/class_practice.s
+
+# target to generate assembly for a file
+src/class_practice.cpp.s:
+	$(MAKE) -f CMakeFiles/class_practice.dir/build.make CMakeFiles/class_practice.dir/src/class_practice.cpp.s
+.PHONY : src/class_practice.cpp.s
 
 src/this_pointer1.o: src/this_pointer1.cpp.o
 
@@ -197,9 +237,13 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... this_pointer1"
 	@echo "... rebuild_cache"
 	@echo "... this_pointer2"
-	@echo "... this_pointer1"
+	@echo "... class_practice"
+	@echo "... src/class_practice.o"
+	@echo "... src/class_practice.i"
+	@echo "... src/class_practice.s"
 	@echo "... src/this_pointer1.o"
 	@echo "... src/this_pointer1.i"
 	@echo "... src/this_pointer1.s"

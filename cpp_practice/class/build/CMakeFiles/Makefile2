@@ -60,13 +60,50 @@ CMAKE_SOURCE_DIR = /home/mark/mark_scripts/cpp_practice/class
 CMAKE_BINARY_DIR = /home/mark/mark_scripts/cpp_practice/class/build
 
 #=============================================================================
+# Target rules for target CMakeFiles/this_pointer1.dir
+
+# All Build rule for target.
+CMakeFiles/this_pointer1.dir/all:
+	$(MAKE) -f CMakeFiles/this_pointer1.dir/build.make CMakeFiles/this_pointer1.dir/depend
+	$(MAKE) -f CMakeFiles/this_pointer1.dir/build.make CMakeFiles/this_pointer1.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mark/mark_scripts/cpp_practice/class/build/CMakeFiles --progress-num=3,4 "Built target this_pointer1"
+.PHONY : CMakeFiles/this_pointer1.dir/all
+
+# Include target in all.
+all: CMakeFiles/this_pointer1.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/this_pointer1.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mark/mark_scripts/cpp_practice/class/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/this_pointer1.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mark/mark_scripts/cpp_practice/class/build/CMakeFiles 0
+.PHONY : CMakeFiles/this_pointer1.dir/rule
+
+# Convenience name for target.
+this_pointer1: CMakeFiles/this_pointer1.dir/rule
+
+.PHONY : this_pointer1
+
+# clean rule for target.
+CMakeFiles/this_pointer1.dir/clean:
+	$(MAKE) -f CMakeFiles/this_pointer1.dir/build.make CMakeFiles/this_pointer1.dir/clean
+.PHONY : CMakeFiles/this_pointer1.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/this_pointer1.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/this_pointer2.dir
 
 # All Build rule for target.
 CMakeFiles/this_pointer2.dir/all:
 	$(MAKE) -f CMakeFiles/this_pointer2.dir/build.make CMakeFiles/this_pointer2.dir/depend
 	$(MAKE) -f CMakeFiles/this_pointer2.dir/build.make CMakeFiles/this_pointer2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mark/mark_scripts/cpp_practice/class/build/CMakeFiles --progress-num=3,4 "Built target this_pointer2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mark/mark_scripts/cpp_practice/class/build/CMakeFiles --progress-num=5,6 "Built target this_pointer2"
 .PHONY : CMakeFiles/this_pointer2.dir/all
 
 # Include target in all.
@@ -97,39 +134,39 @@ clean: CMakeFiles/this_pointer2.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/this_pointer1.dir
+# Target rules for target CMakeFiles/class_practice.dir
 
 # All Build rule for target.
-CMakeFiles/this_pointer1.dir/all:
-	$(MAKE) -f CMakeFiles/this_pointer1.dir/build.make CMakeFiles/this_pointer1.dir/depend
-	$(MAKE) -f CMakeFiles/this_pointer1.dir/build.make CMakeFiles/this_pointer1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mark/mark_scripts/cpp_practice/class/build/CMakeFiles --progress-num=1,2 "Built target this_pointer1"
-.PHONY : CMakeFiles/this_pointer1.dir/all
+CMakeFiles/class_practice.dir/all:
+	$(MAKE) -f CMakeFiles/class_practice.dir/build.make CMakeFiles/class_practice.dir/depend
+	$(MAKE) -f CMakeFiles/class_practice.dir/build.make CMakeFiles/class_practice.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mark/mark_scripts/cpp_practice/class/build/CMakeFiles --progress-num=1,2 "Built target class_practice"
+.PHONY : CMakeFiles/class_practice.dir/all
 
 # Include target in all.
-all: CMakeFiles/this_pointer1.dir/all
+all: CMakeFiles/class_practice.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/this_pointer1.dir/rule: cmake_check_build_system
+CMakeFiles/class_practice.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mark/mark_scripts/cpp_practice/class/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/this_pointer1.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/class_practice.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mark/mark_scripts/cpp_practice/class/build/CMakeFiles 0
-.PHONY : CMakeFiles/this_pointer1.dir/rule
+.PHONY : CMakeFiles/class_practice.dir/rule
 
 # Convenience name for target.
-this_pointer1: CMakeFiles/this_pointer1.dir/rule
+class_practice: CMakeFiles/class_practice.dir/rule
 
-.PHONY : this_pointer1
-
-# clean rule for target.
-CMakeFiles/this_pointer1.dir/clean:
-	$(MAKE) -f CMakeFiles/this_pointer1.dir/build.make CMakeFiles/this_pointer1.dir/clean
-.PHONY : CMakeFiles/this_pointer1.dir/clean
+.PHONY : class_practice
 
 # clean rule for target.
-clean: CMakeFiles/this_pointer1.dir/clean
+CMakeFiles/class_practice.dir/clean:
+	$(MAKE) -f CMakeFiles/class_practice.dir/build.make CMakeFiles/class_practice.dir/clean
+.PHONY : CMakeFiles/class_practice.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/class_practice.dir/clean
 
 .PHONY : clean
 
