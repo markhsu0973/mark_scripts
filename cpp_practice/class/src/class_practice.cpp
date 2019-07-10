@@ -2,6 +2,15 @@
 #include <iostream>
 using namespace std;
 
+class class_practice
+{
+public:
+  class_practice(){
+    cout << "class_practice!! \n";
+  }
+  
+};
+
 class Print_value{
   public:
     void print_value(int);
@@ -32,6 +41,7 @@ int main () {
   
   rect.set_values (3,4);
   rectb.set_values (5,6);
+  class_practice SAPObject;
   // cout << "rect area: " << rect.area() << endl;
   // cout << "rectb area: " << rectb.area() << endl;
   return 0;
