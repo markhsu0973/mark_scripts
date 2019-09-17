@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mark/mark_scripts/cpp_practice/test_include/include/test_include/test_include_main.h
+iostream
+-
+
+/home/mark/mark_scripts/cpp_practice/test_include/src/test_include_main.cpp
+/home/mark/mark_scripts/cpp_practice/test_include/include/test_include/test_include_main.h
+-
+
