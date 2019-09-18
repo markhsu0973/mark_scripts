@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mark/mark_scripts/cpp_practice/test_include
+CMAKE_SOURCE_DIR = /home/mark/test_include_c/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mark/mark_scripts/cpp_practice/test_include/build
+CMAKE_BINARY_DIR = /home/mark/test_include_c/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mark/mark_scripts/cpp_practice/test_include/build/CMakeFiles /home/mark/mark_scripts/cpp_practice/test_include/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mark/test_include_c/build/CMakeFiles /home/mark/test_include_c/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mark/mark_scripts/cpp_practice/test_include/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mark/test_include_c/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,84 +111,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test_include_sub
+# Target rules for targets named calc
 
 # Build rule for target.
-test_include_sub: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_include_sub
-.PHONY : test_include_sub
+calc: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 calc
+.PHONY : calc
 
 # fast build rule for target.
-test_include_sub/fast:
-	$(MAKE) -f CMakeFiles/test_include_sub.dir/build.make CMakeFiles/test_include_sub.dir/build
-.PHONY : test_include_sub/fast
+calc/fast:
+	$(MAKE) -f calc/CMakeFiles/calc.dir/build.make calc/CMakeFiles/calc.dir/build
+.PHONY : calc/fast
 
 #=============================================================================
-# Target rules for targets named test_include_main
+# Target rules for targets named app
 
 # Build rule for target.
-test_include_main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_include_main
-.PHONY : test_include_main
+app: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 app
+.PHONY : app
 
 # fast build rule for target.
-test_include_main/fast:
-	$(MAKE) -f CMakeFiles/test_include_main.dir/build.make CMakeFiles/test_include_main.dir/build
-.PHONY : test_include_main/fast
-
-src/test_include_main.o: src/test_include_main.cpp.o
-
-.PHONY : src/test_include_main.o
-
-# target to build an object file
-src/test_include_main.cpp.o:
-	$(MAKE) -f CMakeFiles/test_include_main.dir/build.make CMakeFiles/test_include_main.dir/src/test_include_main.cpp.o
-.PHONY : src/test_include_main.cpp.o
-
-src/test_include_main.i: src/test_include_main.cpp.i
-
-.PHONY : src/test_include_main.i
-
-# target to preprocess a source file
-src/test_include_main.cpp.i:
-	$(MAKE) -f CMakeFiles/test_include_main.dir/build.make CMakeFiles/test_include_main.dir/src/test_include_main.cpp.i
-.PHONY : src/test_include_main.cpp.i
-
-src/test_include_main.s: src/test_include_main.cpp.s
-
-.PHONY : src/test_include_main.s
-
-# target to generate assembly for a file
-src/test_include_main.cpp.s:
-	$(MAKE) -f CMakeFiles/test_include_main.dir/build.make CMakeFiles/test_include_main.dir/src/test_include_main.cpp.s
-.PHONY : src/test_include_main.cpp.s
-
-src/test_include_sub.o: src/test_include_sub.cpp.o
-
-.PHONY : src/test_include_sub.o
-
-# target to build an object file
-src/test_include_sub.cpp.o:
-	$(MAKE) -f CMakeFiles/test_include_sub.dir/build.make CMakeFiles/test_include_sub.dir/src/test_include_sub.cpp.o
-.PHONY : src/test_include_sub.cpp.o
-
-src/test_include_sub.i: src/test_include_sub.cpp.i
-
-.PHONY : src/test_include_sub.i
-
-# target to preprocess a source file
-src/test_include_sub.cpp.i:
-	$(MAKE) -f CMakeFiles/test_include_sub.dir/build.make CMakeFiles/test_include_sub.dir/src/test_include_sub.cpp.i
-.PHONY : src/test_include_sub.cpp.i
-
-src/test_include_sub.s: src/test_include_sub.cpp.s
-
-.PHONY : src/test_include_sub.s
-
-# target to generate assembly for a file
-src/test_include_sub.cpp.s:
-	$(MAKE) -f CMakeFiles/test_include_sub.dir/build.make CMakeFiles/test_include_sub.dir/src/test_include_sub.cpp.s
-.PHONY : src/test_include_sub.cpp.s
+app/fast:
+	$(MAKE) -f app/CMakeFiles/app.dir/build.make app/CMakeFiles/app.dir/build
+.PHONY : app/fast
 
 # Help Target
 help:
@@ -198,14 +144,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... test_include_sub"
-	@echo "... test_include_main"
-	@echo "... src/test_include_main.o"
-	@echo "... src/test_include_main.i"
-	@echo "... src/test_include_main.s"
-	@echo "... src/test_include_sub.o"
-	@echo "... src/test_include_sub.i"
-	@echo "... src/test_include_sub.s"
+	@echo "... calc"
+	@echo "... app"
 .PHONY : help
 
 

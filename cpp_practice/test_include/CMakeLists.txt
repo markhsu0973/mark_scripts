@@ -16,4 +16,5 @@ else()
     message(FATAL_ERROR "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
 endif()
 
-add_executable (test_include src/test_include_main.cpp)
+add_executable (test_include_main src/test_include_main.cpp)
+add_executable (test_include_sub src/test_include_sub.cpp)

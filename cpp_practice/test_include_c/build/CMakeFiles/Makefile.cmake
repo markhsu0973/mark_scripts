@@ -7,19 +7,20 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "../CMakeLists.txt"
   "CMakeFiles/3.5.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.5.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.5.1/CMakeSystem.cmake"
   "CMakeFiles/feature_tests.c"
   "CMakeFiles/feature_tests.cxx"
+  "/home/mark/test_include_c/src/CMakeLists.txt"
+  "/home/mark/test_include_c/src/app/CMakeLists.txt"
+  "/home/mark/test_include_c/src/calc/CMakeLists.txt"
   "/usr/share/cmake-3.5/Modules/CMakeCCompiler.cmake.in"
   "/usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c"
   "/usr/share/cmake-3.5/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeCXXCompiler.cmake.in"
   "/usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp"
   "/usr/share/cmake-3.5/Modules/CMakeCXXInformation.cmake"
-  "/usr/share/cmake-3.5/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeCommonLanguageInclude.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeCompilerIdDetection.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeDetermineCCompiler.cmake"
@@ -41,8 +42,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.5/Modules/CMakeTestCXXCompiler.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeTestCompilerCommon.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeUnixFindMake.cmake"
-  "/usr/share/cmake-3.5/Modules/CheckCXXCompilerFlag.cmake"
-  "/usr/share/cmake-3.5/Modules/CheckCXXSourceCompiles.cmake"
   "/usr/share/cmake-3.5/Modules/Compiler/ADSP-DetermineCompiler.cmake"
   "/usr/share/cmake-3.5/Modules/Compiler/ARMCC-DetermineCompiler.cmake"
   "/usr/share/cmake-3.5/Modules/Compiler/AppleClang-DetermineCompiler.cmake"
@@ -110,10 +109,12 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/3.5.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.5.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "calc/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "app/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/test_include_sub.dir/DependInfo.cmake"
-  "CMakeFiles/test_include_main.dir/DependInfo.cmake"
+  "calc/CMakeFiles/calc.dir/DependInfo.cmake"
+  "app/CMakeFiles/app.dir/DependInfo.cmake"
   )

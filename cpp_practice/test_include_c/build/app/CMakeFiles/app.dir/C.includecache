@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mark/test_include_c/src/app/main.c
+stdio.h
+-
+calc/calc.h
+-
+
+/home/mark/test_include_c/src/calc/calc.h
+
