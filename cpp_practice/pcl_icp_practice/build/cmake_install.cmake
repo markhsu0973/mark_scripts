@@ -1,4 +1,4 @@
-# Install script for directory: /home/mark/mark_scripts/cpp_practice/icp_practice
+# Install script for directory: /home/mark/mark_scripts/cpp_practice/pcl_icp_practice
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/pcl_icp_practice"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/mark/mark_scripts/cpp_practice/icp_practice/build/pcl_icp_practice")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/mark/mark_scripts/cpp_practice/pcl_icp_practice/build/pcl_icp_practice")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/pcl_icp_practice" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/pcl_icp_practice")
     file(RPATH_CHANGE
@@ -60,5 +60,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/mark/mark_scripts/cpp_practice/icp_practice/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/mark/mark_scripts/cpp_practice/pcl_icp_practice/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
