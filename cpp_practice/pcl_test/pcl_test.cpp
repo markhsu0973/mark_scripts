@@ -4,7 +4,7 @@
 #include <pcl/visualization/pcl_visualizer.h>
 #include <pcl/visualization/cloud_viewer.h>
 #include <pcl/console/parse.h>
- 
+
  
 int main(int argc, char **argv) {
     std::cout << "Test PCL !!!" << std::endl;
