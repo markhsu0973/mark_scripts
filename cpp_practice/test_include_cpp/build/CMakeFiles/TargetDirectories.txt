@@ -1,0 +1,6 @@
+/home/mark/test_include_cpp/build/CMakeFiles/rebuild_cache.dir
+/home/mark/test_include_cpp/build/CMakeFiles/edit_cache.dir
+/home/mark/test_include_cpp/build/CMakeFiles/app.dir
+/home/mark/test_include_cpp/build/calc/CMakeFiles/rebuild_cache.dir
+/home/mark/test_include_cpp/build/calc/CMakeFiles/edit_cache.dir
+/home/mark/test_include_cpp/build/calc/CMakeFiles/calc.dir
