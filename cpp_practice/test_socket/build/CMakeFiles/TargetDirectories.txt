@@ -1,0 +1,4 @@
+/home/mark/mark_scripts/cpp_practice/test_socket/build/CMakeFiles/rebuild_cache.dir
+/home/mark/mark_scripts/cpp_practice/test_socket/build/CMakeFiles/server.dir
+/home/mark/mark_scripts/cpp_practice/test_socket/build/CMakeFiles/edit_cache.dir
+/home/mark/mark_scripts/cpp_practice/test_socket/build/CMakeFiles/client.dir
