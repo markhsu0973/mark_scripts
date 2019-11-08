@@ -1,0 +1,56 @@
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu definition
+//
+/////////////////////////////////////////////////////////////////////////////
+#include "resource.h"
+
+IDI_LENA ICON DevImageProcessing.ico
+lena ICON DevImageProcessing.ico
+
+MAINMENU MENU DISCARDABLE 
+{
+    POPUP "檔案(&F)"
+    {
+        MENUITEM "讀入圖檔",                  MENU_READ
+        MENUITEM "另存圖檔",                  MENU_WRITE
+        MENUITEM SEPARATOR
+        MENUITEM "列印",                      MENU_PRINT, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "結束",                      MENU_QUIT
+    }
+    POPUP "Process"
+        {
+            POPUP "Color to"                  //MENU_COLORTO
+              {
+                MENUITEM "Gray",              MENU_GRAY
+                MENUITEM "Red Only",          MENU_RED
+                MENUITEM "Green Only",        MENU_GREEN
+                MENUITEM "Blue Only",         MENU_BLUE
+              }
+            MENUITEM "Mosaic",                MENU_MOSAIC
+            MENUITEM "Filtering",             MENU_FILTERING
+            MENUITEM "My Processing",         MENU_MINE
+        }
+   MENUITEM "Show Color",                     543 
+}
+
+SUBMENU MENU DISCARDABLE 
+{
+    POPUP "彈出選單", HELP
+    {
+        MENUITEM "My Processing",               MENU_MINE
+        MENUITEM "左右影像對調",                MENU_SWAP 
+        MENUITEM "暫存影像處理結果",            MENU_PASTE
+        MENUITEM SEPARATOR        
+        MENUITEM "儲存影像處理結果",            MENU_SAVE_RESULT           
+    }
+}
+
+FRAMEMENU MENU DISCARDABLE 
+{
+    POPUP "檔案(&F)"
+    {
+        MENUITEM "另存圖檔",                    MENU_WRITE
+    }
+}

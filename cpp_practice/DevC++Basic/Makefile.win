@@ -1,0 +1,39 @@
+# Project: DevImageProcessing
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = DevImageProcessing_private.res
+OBJ  = ImageProcessingMain.o MyImageProcessing.o RichFreeImage.o $(RES)
+LINKOBJ  = ImageProcessingMain.o MyImageProcessing.o RichFreeImage.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" -mwindows FreeImage.lib  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = DevImageProcessing.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before DevImageProcessing.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "DevImageProcessing.exe" $(LIBS)
+
+ImageProcessingMain.o: ImageProcessingMain.cpp
+	$(CPP) -c ImageProcessingMain.cpp -o ImageProcessingMain.o $(CXXFLAGS)
+
+MyImageProcessing.o: MyImageProcessing.cpp
+	$(CPP) -c MyImageProcessing.cpp -o MyImageProcessing.o $(CXXFLAGS)
+
+RichFreeImage.o: RichFreeImage.cpp
+	$(CPP) -c RichFreeImage.cpp -o RichFreeImage.o $(CXXFLAGS)
+
+DevImageProcessing_private.res: DevImageProcessing_private.rc ImageProcessingMain.rc 
+	$(WINDRES) -i DevImageProcessing_private.rc --input-format=rc -o DevImageProcessing_private.res -O coff 

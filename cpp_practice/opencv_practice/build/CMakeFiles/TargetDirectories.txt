@@ -1,0 +1,4 @@
+/home/mark/mark_scripts/cpp_practice/opencv_practice/build/CMakeFiles/rebuild_cache.dir
+/home/mark/mark_scripts/cpp_practice/opencv_practice/build/CMakeFiles/edit_cache.dir
+/home/mark/mark_scripts/cpp_practice/opencv_practice/build/CMakeFiles/hough_line_transform.dir
+/home/mark/mark_scripts/cpp_practice/opencv_practice/build/CMakeFiles/DisplayImage.dir
