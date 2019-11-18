@@ -22,7 +22,7 @@ password.grid(row=1, column=0)
 user_entry = Entry(bg="#323232")
 user_entry.grid(row=0, column=1)
 
-password_entry = Entry(bg="#323232)
+password_entry = Entry(bg="#323232")
 password_entry.grid(row=1, column=1)
 
 # # 跨行Span
