@@ -1,4 +1,5 @@
-
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 #//////////////////////////////////////////////////////////////////////////////#
 #【Proladon】Python GUI - Tkinter EP.8 Scale尺度(滑桿)
 # Youtube影片: https://youtu.be/EfKJG_TSr8U

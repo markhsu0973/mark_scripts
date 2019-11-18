@@ -1,4 +1,5 @@
-
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 #//////////////////////////////////////////////////////////////////////////////#
 #【Proladon】Python GUI - Tkinter EP.5 第一個程式 X,Y座標隨機產生器
 # Youtube影片: https://youtu.be/bJv4W33ta-Y

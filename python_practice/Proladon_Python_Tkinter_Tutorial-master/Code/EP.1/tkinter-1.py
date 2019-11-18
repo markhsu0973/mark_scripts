@@ -1,4 +1,5 @@
-
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 #//////////////////////////////////////////////////////////////////////////////#
 #【Proladon】Python GUI - Tkinter EP.1 建立基本視窗
 # Youtube影片: https://youtu.be/_wXmXBpCAfc
@@ -6,7 +7,7 @@
 
 #python3 tkinter
 #導入tkinter模組
-from tkinter import*
+from Tkinter import*
 
 win = Tk() #建立主視窗
 win.title("tkinter test")

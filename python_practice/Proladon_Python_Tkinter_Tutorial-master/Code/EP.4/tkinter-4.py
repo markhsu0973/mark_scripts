@@ -1,4 +1,5 @@
-
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 #//////////////////////////////////////////////////////////////////////////////#
 #【Proladon】Python GUI - Tkinter EP.4 Label、Entry (功能連結)
 # Youtube影片: https://youtu.be/bG8qUpH2Bzw

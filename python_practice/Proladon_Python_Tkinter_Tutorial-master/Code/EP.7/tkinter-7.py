@@ -1,4 +1,5 @@
-
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 #//////////////////////////////////////////////////////////////////////////////#
 #【Proladon】Python GUI - Tkinter EP.7 佈局 pack、place
 # Youtube影片: 
