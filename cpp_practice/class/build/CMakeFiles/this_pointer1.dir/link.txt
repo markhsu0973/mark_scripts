@@ -1,1 +1,1 @@
-/usr/bin/c++      CMakeFiles/this_pointer1.dir/src/this_pointer1.cpp.o  -o this_pointer1 -rdynamic 
+/usr/bin/c++   -std=c++11 -pthread   CMakeFiles/this_pointer1.dir/src/this_pointer1.cpp.o  -o this_pointer1 -rdynamic 

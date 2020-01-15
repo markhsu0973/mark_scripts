@@ -1,0 +1,3 @@
+/home/mark/mark_scripts/cpp_practice/lambda/build/CMakeFiles/edit_cache.dir
+/home/mark/mark_scripts/cpp_practice/lambda/build/CMakeFiles/rebuild_cache.dir
+/home/mark/mark_scripts/cpp_practice/lambda/build/CMakeFiles/lambda.dir

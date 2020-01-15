@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named this_pointer1
-
-# Build rule for target.
-this_pointer1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 this_pointer1
-.PHONY : this_pointer1
-
-# fast build rule for target.
-this_pointer1/fast:
-	$(MAKE) -f CMakeFiles/this_pointer1.dir/build.make CMakeFiles/this_pointer1.dir/build
-.PHONY : this_pointer1/fast
-
-#=============================================================================
 # Target rules for targets named this_pointer2
 
 # Build rule for target.
@@ -148,6 +135,32 @@ class_practice: cmake_check_build_system
 class_practice/fast:
 	$(MAKE) -f CMakeFiles/class_practice.dir/build.make CMakeFiles/class_practice.dir/build
 .PHONY : class_practice/fast
+
+#=============================================================================
+# Target rules for targets named this_pointer1
+
+# Build rule for target.
+this_pointer1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 this_pointer1
+.PHONY : this_pointer1
+
+# fast build rule for target.
+this_pointer1/fast:
+	$(MAKE) -f CMakeFiles/this_pointer1.dir/build.make CMakeFiles/this_pointer1.dir/build
+.PHONY : this_pointer1/fast
+
+#=============================================================================
+# Target rules for targets named polymorphism
+
+# Build rule for target.
+polymorphism: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 polymorphism
+.PHONY : polymorphism
+
+# fast build rule for target.
+polymorphism/fast:
+	$(MAKE) -f CMakeFiles/polymorphism.dir/build.make CMakeFiles/polymorphism.dir/build
+.PHONY : polymorphism/fast
 
 src/class_practice.o: src/class_practice.cpp.o
 
@@ -175,6 +188,33 @@ src/class_practice.s: src/class_practice.cpp.s
 src/class_practice.cpp.s:
 	$(MAKE) -f CMakeFiles/class_practice.dir/build.make CMakeFiles/class_practice.dir/src/class_practice.cpp.s
 .PHONY : src/class_practice.cpp.s
+
+src/polymorphism.o: src/polymorphism.cpp.o
+
+.PHONY : src/polymorphism.o
+
+# target to build an object file
+src/polymorphism.cpp.o:
+	$(MAKE) -f CMakeFiles/polymorphism.dir/build.make CMakeFiles/polymorphism.dir/src/polymorphism.cpp.o
+.PHONY : src/polymorphism.cpp.o
+
+src/polymorphism.i: src/polymorphism.cpp.i
+
+.PHONY : src/polymorphism.i
+
+# target to preprocess a source file
+src/polymorphism.cpp.i:
+	$(MAKE) -f CMakeFiles/polymorphism.dir/build.make CMakeFiles/polymorphism.dir/src/polymorphism.cpp.i
+.PHONY : src/polymorphism.cpp.i
+
+src/polymorphism.s: src/polymorphism.cpp.s
+
+.PHONY : src/polymorphism.s
+
+# target to generate assembly for a file
+src/polymorphism.cpp.s:
+	$(MAKE) -f CMakeFiles/polymorphism.dir/build.make CMakeFiles/polymorphism.dir/src/polymorphism.cpp.s
+.PHONY : src/polymorphism.cpp.s
 
 src/this_pointer1.o: src/this_pointer1.cpp.o
 
@@ -237,13 +277,17 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... this_pointer1"
 	@echo "... rebuild_cache"
 	@echo "... this_pointer2"
 	@echo "... class_practice"
+	@echo "... this_pointer1"
+	@echo "... polymorphism"
 	@echo "... src/class_practice.o"
 	@echo "... src/class_practice.i"
 	@echo "... src/class_practice.s"
+	@echo "... src/polymorphism.o"
+	@echo "... src/polymorphism.i"
+	@echo "... src/polymorphism.s"
 	@echo "... src/this_pointer1.o"
 	@echo "... src/this_pointer1.i"
 	@echo "... src/this_pointer1.s"

@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -pthread   CMakeFiles/struct_practice.dir/src/struct_practice.cpp.o  -o struct_practice -rdynamic 

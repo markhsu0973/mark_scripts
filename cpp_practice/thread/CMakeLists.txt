@@ -17,3 +17,4 @@ else()
 endif()
 
 add_executable (thread src/thread.cpp)
+add_executable (wait_for src/wait_for.cpp)

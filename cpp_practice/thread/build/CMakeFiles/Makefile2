@@ -60,6 +60,43 @@ CMAKE_SOURCE_DIR = /home/mark/mark_scripts/cpp_practice/thread
 CMAKE_BINARY_DIR = /home/mark/mark_scripts/cpp_practice/thread/build
 
 #=============================================================================
+# Target rules for target CMakeFiles/wait_for.dir
+
+# All Build rule for target.
+CMakeFiles/wait_for.dir/all:
+	$(MAKE) -f CMakeFiles/wait_for.dir/build.make CMakeFiles/wait_for.dir/depend
+	$(MAKE) -f CMakeFiles/wait_for.dir/build.make CMakeFiles/wait_for.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mark/mark_scripts/cpp_practice/thread/build/CMakeFiles --progress-num=3,4 "Built target wait_for"
+.PHONY : CMakeFiles/wait_for.dir/all
+
+# Include target in all.
+all: CMakeFiles/wait_for.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/wait_for.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mark/mark_scripts/cpp_practice/thread/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/wait_for.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mark/mark_scripts/cpp_practice/thread/build/CMakeFiles 0
+.PHONY : CMakeFiles/wait_for.dir/rule
+
+# Convenience name for target.
+wait_for: CMakeFiles/wait_for.dir/rule
+
+.PHONY : wait_for
+
+# clean rule for target.
+CMakeFiles/wait_for.dir/clean:
+	$(MAKE) -f CMakeFiles/wait_for.dir/build.make CMakeFiles/wait_for.dir/clean
+.PHONY : CMakeFiles/wait_for.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/wait_for.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/thread.dir
 
 # All Build rule for target.

@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named wait_for
+
+# Build rule for target.
+wait_for: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 wait_for
+.PHONY : wait_for
+
+# fast build rule for target.
+wait_for/fast:
+	$(MAKE) -f CMakeFiles/wait_for.dir/build.make CMakeFiles/wait_for.dir/build
+.PHONY : wait_for/fast
+
+#=============================================================================
 # Target rules for targets named thread
 
 # Build rule for target.
@@ -150,6 +163,33 @@ src/thread.cpp.s:
 	$(MAKE) -f CMakeFiles/thread.dir/build.make CMakeFiles/thread.dir/src/thread.cpp.s
 .PHONY : src/thread.cpp.s
 
+src/wait_for.o: src/wait_for.cpp.o
+
+.PHONY : src/wait_for.o
+
+# target to build an object file
+src/wait_for.cpp.o:
+	$(MAKE) -f CMakeFiles/wait_for.dir/build.make CMakeFiles/wait_for.dir/src/wait_for.cpp.o
+.PHONY : src/wait_for.cpp.o
+
+src/wait_for.i: src/wait_for.cpp.i
+
+.PHONY : src/wait_for.i
+
+# target to preprocess a source file
+src/wait_for.cpp.i:
+	$(MAKE) -f CMakeFiles/wait_for.dir/build.make CMakeFiles/wait_for.dir/src/wait_for.cpp.i
+.PHONY : src/wait_for.cpp.i
+
+src/wait_for.s: src/wait_for.cpp.s
+
+.PHONY : src/wait_for.s
+
+# target to generate assembly for a file
+src/wait_for.cpp.s:
+	$(MAKE) -f CMakeFiles/wait_for.dir/build.make CMakeFiles/wait_for.dir/src/wait_for.cpp.s
+.PHONY : src/wait_for.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -158,10 +198,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... wait_for"
 	@echo "... thread"
 	@echo "... src/thread.o"
 	@echo "... src/thread.i"
 	@echo "... src/thread.s"
+	@echo "... src/wait_for.o"
+	@echo "... src/wait_for.i"
+	@echo "... src/wait_for.s"
 .PHONY : help
 
 

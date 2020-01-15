@@ -25,7 +25,7 @@ s.config(label="Tkinter Slider")
 # 直接設置初始值
 s.set(50)
 
-s.config(command=change)
+# s.config(command=change)
 s.pack()
 
 win.mainloop()

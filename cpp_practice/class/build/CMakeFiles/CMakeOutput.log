@@ -552,3 +552,37 @@ make[1]: Leaving directory '/home/mark/mark_scripts/cpp_practice/class/build/CMa
     Feature record: CXX_FEATURE:0cxx_variable_templates
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
+Performing C++ SOURCE FILE Test COMPILER_SUPPORTS_CXX11 succeeded with the following output:
+Change Dir: /home/mark/mark_scripts/cpp_practice/class/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4a0b9/fast"
+make[1]: Entering directory '/home/mark/mark_scripts/cpp_practice/class/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_4a0b9.dir/build.make CMakeFiles/cmTC_4a0b9.dir/build
+make[2]: Entering directory '/home/mark/mark_scripts/cpp_practice/class/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_4a0b9.dir/src.cxx.o
+/usr/bin/c++     -DCOMPILER_SUPPORTS_CXX11   -std=c++11 -o CMakeFiles/cmTC_4a0b9.dir/src.cxx.o -c /home/mark/mark_scripts/cpp_practice/class/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_4a0b9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4a0b9.dir/link.txt --verbose=1
+/usr/bin/c++    -DCOMPILER_SUPPORTS_CXX11    CMakeFiles/cmTC_4a0b9.dir/src.cxx.o  -o cmTC_4a0b9 -rdynamic 
+make[2]: Leaving directory '/home/mark/mark_scripts/cpp_practice/class/build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/mark/mark_scripts/cpp_practice/class/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORTS_CXX0X succeeded with the following output:
+Change Dir: /home/mark/mark_scripts/cpp_practice/class/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b792a/fast"
+make[1]: Entering directory '/home/mark/mark_scripts/cpp_practice/class/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_b792a.dir/build.make CMakeFiles/cmTC_b792a.dir/build
+make[2]: Entering directory '/home/mark/mark_scripts/cpp_practice/class/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b792a.dir/src.cxx.o
+/usr/bin/c++     -DCOMPILER_SUPPORTS_CXX0X   -std=c++0x -o CMakeFiles/cmTC_b792a.dir/src.cxx.o -c /home/mark/mark_scripts/cpp_practice/class/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_b792a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b792a.dir/link.txt --verbose=1
+/usr/bin/c++    -DCOMPILER_SUPPORTS_CXX0X    CMakeFiles/cmTC_b792a.dir/src.cxx.o  -o cmTC_b792a -rdynamic 
+make[2]: Leaving directory '/home/mark/mark_scripts/cpp_practice/class/build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/mark/mark_scripts/cpp_practice/class/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }

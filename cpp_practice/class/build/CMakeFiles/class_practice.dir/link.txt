@@ -1,1 +1,1 @@
-/usr/bin/c++      CMakeFiles/class_practice.dir/src/class_practice.cpp.o  -o class_practice -rdynamic 
+/usr/bin/c++   -std=c++11 -pthread   CMakeFiles/class_practice.dir/src/class_practice.cpp.o  -o class_practice -rdynamic 

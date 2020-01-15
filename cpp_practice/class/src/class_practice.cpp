@@ -1,6 +1,8 @@
 // example: one class, two objects
 #include <iostream>
+#include <memory>
 using namespace std;
+
 
 class class_practice
 {
@@ -38,7 +40,6 @@ void Rectangle::set_values (int x, int y) {
 int main () {
   Rectangle rect, rectb;
 
-  
   rect.set_values (3,4);
   rectb.set_values (5,6);
   class_practice SAPObject;
