@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -pthread   CMakeFiles/HW7-4.dir/src/HW7-4.cpp.o  -o HW7-4 -rdynamic 

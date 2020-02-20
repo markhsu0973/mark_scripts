@@ -1,0 +1,7 @@
+/home/mark/mark_scripts/cpp_practice/read_write/build/CMakeFiles/edit_cache.dir
+/home/mark/mark_scripts/cpp_practice/read_write/build/CMakeFiles/rebuild_cache.dir
+/home/mark/mark_scripts/cpp_practice/read_write/build/CMakeFiles/HW8-2.dir
+/home/mark/mark_scripts/cpp_practice/read_write/build/CMakeFiles/practice.dir
+/home/mark/mark_scripts/cpp_practice/read_write/build/CMakeFiles/HW7-4.dir
+/home/mark/mark_scripts/cpp_practice/read_write/build/CMakeFiles/HW8-1.dir
+/home/mark/mark_scripts/cpp_practice/read_write/build/CMakeFiles/HW7-5.dir

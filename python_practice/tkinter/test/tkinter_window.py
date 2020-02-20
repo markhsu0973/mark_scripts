@@ -21,12 +21,13 @@ import platform
 
 
 def ssh(agv_ip,ssh_cmd):
-    source_ros = 'source /opt/ros/kinetic/setup.bash && source /home/robot/catkin_ws/AGV3/setup.bash'    
+    source_ros = 'source /opt/ros/kinetic/setup.bash && source /home/mark/mark/devel/setup.bash'
+    # source_ros = 'source /opt/ros/kinetic/setup.bash && source /home/robot/catkin_ws/AGV3/setup.bash'     
     client = paramiko.SSHClient()
     client.load_system_host_keys()
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     client.connect(agv_ip, username="mark", password="1111")
-    stdin, stdout, stderr = client.exec_command(ssh_cmd)
+    stdin, stdout, stderr = client.exec_command(source_ros + '&&' + ssh_cmd)
     for line in stdout:
         print line.strip('/n')
     client.close()
@@ -38,16 +39,30 @@ def ping_agv(IP):
     hostalive = toping.returncode
     return hostalive
 
-def Load ():
-    print"load"
+def Reset ():
+    print"Do reset"
     cmd = "pwd"
     ssh(wifi_ip_entry.get().strip(),cmd)
-    
+    print"Finish reset"
+
+def Preload ():
+    print"Do preload"
+    str_p = '"'
+    cmd = 'rosservice call /TaskCommandService "TaskName: ' + "'DockTask'\n" + 'TaskCommand: ' + "'task.command.run'\n" + 'Argument: ' + "'-p|-2.1385|0.412|3.14'" + '"'
+    ssh(wifi_ip_entry.get().strip(),cmd)
+    print"Finish preload"
+
+def Load ():
+    print"Do load"
+    cmd = "pwd"
+    ssh(wifi_ip_entry.get().strip(),cmd)
+    print"Finish load"
 
 def UnLoad ():
-    print"unload"
+    print"Do unload"
     cmd = "ls"
     ssh(wifi_ip_entry.get().strip(),cmd)
+    print"Finish unload"
 
 def resize(w, h, w_box, h_box, pil_image):  
   f1 = 1.0*w_box/w # 1.0 forces float division in Python2  
@@ -62,7 +77,7 @@ def resize(w, h, w_box, h_box, pil_image):
 win = Tk() #建立Tk視窗
 
 #標題
-win.title("Roller System Integration Test")
+win.title("Roller System Test Tool")
 
 sysstr = platform.system()
 if(sysstr =="Windows"):
@@ -85,9 +100,9 @@ else:
 #大小
 win.geometry("400x400") #寬x高
 win.geometry("400x400+400+400")
-win.minsize(width=400, height=400) #最小範圍
+win.minsize(width=400, height=550) #最小範圍
 win.maxsize(width=1024, height=1024) #最大範圍
-win.resizable(0, 0) # 1 = True, 0 = False
+win.resizable(0, 1) # 1 = True, 0 = False
 
 win.config(bg="white")
 #透明度
@@ -96,7 +111,7 @@ win.attributes("-alpha", 1)   #1~0,  1=100%  0=0%
 #置頂
 win.attributes("-topmost", 1) # 1 = True, 0 = False  
 
-title_text = Label(text="Roller System Integration Test", fg="black", bg="white")
+title_text = Label(text="Roller System Test Tool", fg="black", bg="white")
 # obj.config(font="字型 大小")
 title_text.config(font=("ansifixed", 15))
 title_text.pack()
@@ -126,14 +141,32 @@ space_label =  Label(text="", fg="white", bg="white")
 space_label.config(font=("ansifixed", 5))
 space_label.pack()
 
-load_btn = Button(text="Load", font="12", command= Load)
+space_label =  Label(text="", fg="white", bg="white")
+space_label.config(font=("ansifixed", 5))
+space_label.pack()
+
+load_btn = Button(text="Reset", font="12", command= Reset)
 load_btn.pack()
 
 space_label =  Label(text="", fg="white", bg="white")
 space_label.config(font=("ansifixed", 5))
 space_label.pack()
 
-unload_btn = Button(text="UnLoad", font="12", command= UnLoad)
+load_btn = Button(text="Preload", font="12", command= Preload)
+load_btn.pack()
+
+space_label =  Label(text="", fg="white", bg="white")
+space_label.config(font=("ansifixed", 5))
+space_label.pack()
+
+load_btn = Button(text="Loading", font="12", command= Load)
+load_btn.pack()
+
+space_label =  Label(text="", fg="white", bg="white")
+space_label.config(font=("ansifixed", 5))
+space_label.pack()
+
+unload_btn = Button(text="UnLoading", font="12", command= UnLoad)
 unload_btn.pack()
 
 space_label =  Label(text="", fg="white", bg="white")

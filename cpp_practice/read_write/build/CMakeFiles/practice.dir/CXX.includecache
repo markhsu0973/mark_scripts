@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mark/mark_scripts/cpp_practice/read_write/src/practice.cpp
+iostream
+-
+cstdlib
+-
+ctime
+-
+math.h
+-
+

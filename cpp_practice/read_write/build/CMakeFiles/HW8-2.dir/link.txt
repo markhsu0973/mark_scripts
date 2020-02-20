@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -pthread   CMakeFiles/HW8-2.dir/src/HW8-2.cpp.o  -o HW8-2 -rdynamic 
