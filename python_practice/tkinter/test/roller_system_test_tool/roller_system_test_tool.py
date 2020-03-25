@@ -22,13 +22,15 @@ import platform
 
 
 def ssh(agv_ip,ssh_cmd):
-    source_ros = 'source /opt/ros/kinetic/setup.bash && source /home/robot/catkin_ws/AGV3/setup.bash'
+    # source_ros = 'source /opt/ros/kinetic/setup.bash && source /home/robot/catkin_ws/AGV3/setup.bash'
     # source_ros = 'source /opt/ros/kinetic/setup.bash && source /home/robot/catkin_ws/AGV3/setup.bash'     
+    source_ros = 'source /opt/ros/kinetic/setup.bash && source /home/robot/catkin_ws_source_code/devel/setup.bash'
+    source_kinetic = 'source /opt/ros/kinetic/setup.bash'
     client = paramiko.SSHClient()
     client.load_system_host_keys()
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     client.connect(agv_ip, username="robot", password="robot")
-    stdin, stdout, stderr = client.exec_command(source_ros + '&&' + ssh_cmd)
+    stdin, stdout, stderr = client.exec_command(source_ros + "&&" + ssh_cmd)
     for line in stdout:
         print line.strip('/n')
     client.close()
@@ -43,7 +45,7 @@ def ping_agv(IP):
 def Reset ():
     os.system(clear_cmd)
     print"===   Do Reset   ==="
-    cmd = 'rosservice call /ScadaControlService "command: ' + "'Reset'\n" + 'timeout: 0\ndistance : 0\nextra_delay: 0' + '"'
+    cmd = 'rosservice call /ScadaControlService "command: ' + "'Reset'\n" + 'timeout: 300\ndistance : 0\nextra_delay: 0' + '"'
     ssh(wifi_ip_entry.get().strip(),cmd)
     print"=== Finish Reset ==="
 
@@ -51,23 +53,30 @@ def Preload ():
     os.system(clear_cmd)
     print"===   Do Preload   ==="
     str_p = '"'
-    cmd = 'rosservice call /ScadaControlService "command: ' + "'Preload'\n" + 'timeout: 30\ndistance : 60\nextra_delay: 0' + '"'
+    cmd = 'rosservice call /ScadaControlService "command: ' + "'Preload'\n" + 'timeout: 130\ndistance : 130\nextra_delay: 0' + '"'
     ssh(wifi_ip_entry.get().strip(),cmd)
     print"=== Finish Preload ==="
 
 def Load ():
     os.system(clear_cmd)
     print"===   Do Load   ==="
-    cmd = 'rosservice call /ScadaControlService "command: ' + "'Loading'\n" + 'timeout: 0\ndistance : 0\nextra_delay: 0' + '"'
+    cmd = 'rosservice call /ScadaControlService "command: ' + "'Loading'\n" + 'timeout: 30\ndistance : 0\nextra_delay: 0' + '"'
     ssh(wifi_ip_entry.get().strip(),cmd)
     print"=== Finish Load ==="
 
 def UnLoad ():
     os.system(clear_cmd)
     print"===   Do Unload   ==="
-    cmd = 'rosservice call /ScadaControlService "command: ' + "'Unloading'\n" + 'timeout: 0\ndistance : 0\nextra_delay: 0' + '"'
+    cmd = 'rosservice call /ScadaControlService "command: ' + "'Unloading'\n" + 'timeout: 10\ndistance : 0\nextra_delay: 10' + '"'
     ssh(wifi_ip_entry.get().strip(),cmd)
     print"=== Finish Unload ==="
+
+def Extra_ststus ():
+    os.system(clear_cmd)
+    print"===   Do Extra_ststus   ==="
+    cmd = 'rostopic pub -1 /scada/extra_status std_msgs/UInt8MultiArray "layout:\n  dim:\n  - label: ' + "''\n" + '    size: 0\n    stride: 0\n  data_offset: 0\ndata: [1,0]' + '"'
+    ssh(wifi_ip_entry.get().strip(),cmd)
+    print"=== Finish Extra_ststus ==="
 
 def resize(w, h, w_box, h_box, pil_image):  
   f1 = 1.0*w_box/w # 1.0 forces float division in Python2  
@@ -149,12 +158,12 @@ space_label =  Label(text="", fg="white", bg="white")
 space_label.config(font=("ansifixed", 5))
 space_label.pack()
 
-space_label =  Label(text="", fg="white", bg="white")
-space_label.config(font=("ansifixed", 5))
-space_label.pack()
+# space_label =  Label(text="", fg="white", bg="white")
+# space_label.config(font=("ansifixed", 5))
+# space_label.pack()
 
-load_btn = Button(text="Reset", font="12", command= Reset)
-load_btn.pack()
+# load_btn = Button(text="Reset", font="12", command= Reset)
+# load_btn.pack()
 
 space_label =  Label(text="", fg="white", bg="white")
 space_label.config(font=("ansifixed", 5))
@@ -175,6 +184,13 @@ space_label.config(font=("ansifixed", 5))
 space_label.pack()
 
 unload_btn = Button(text="UnLoading", font="12", command= UnLoad)
+unload_btn.pack()
+
+space_label =  Label(text="", fg="white", bg="white")
+space_label.config(font=("ansifixed", 8))
+space_label.pack()
+
+unload_btn = Button(text="Extra_ststus", font="12", command= Extra_ststus)
 unload_btn.pack()
 
 space_label =  Label(text="", fg="white", bg="white")
