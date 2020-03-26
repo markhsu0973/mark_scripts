@@ -48,7 +48,7 @@ int
 main (int argc, char** argv)
 {
   pcd_prcessing pp;
-  pp.pcd_reading("teacup.pcd");
+  pp.pcd_reading("table_scene_lms400.pcd");
   pp.pcd_viewer();
   return (0);
 }

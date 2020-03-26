@@ -1,0 +1,7 @@
+/home/mark/mark_scripts/cpp_practice/Euclidean_Cluster_Extraction/build/CMakeFiles/rebuild_cache.dir
+/home/mark/mark_scripts/cpp_practice/Euclidean_Cluster_Extraction/build/CMakeFiles/install.dir
+/home/mark/mark_scripts/cpp_practice/Euclidean_Cluster_Extraction/build/CMakeFiles/list_install_components.dir
+/home/mark/mark_scripts/cpp_practice/Euclidean_Cluster_Extraction/build/CMakeFiles/Euclidean_Cluster_Extraction.dir
+/home/mark/mark_scripts/cpp_practice/Euclidean_Cluster_Extraction/build/CMakeFiles/install/strip.dir
+/home/mark/mark_scripts/cpp_practice/Euclidean_Cluster_Extraction/build/CMakeFiles/install/local.dir
+/home/mark/mark_scripts/cpp_practice/Euclidean_Cluster_Extraction/build/CMakeFiles/edit_cache.dir
