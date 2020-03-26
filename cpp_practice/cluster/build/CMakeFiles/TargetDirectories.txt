@@ -1,0 +1,4 @@
+/home/mark/mark_scripts/cpp_practice/cluster/build/CMakeFiles/edit_cache.dir
+/home/mark/mark_scripts/cpp_practice/cluster/build/CMakeFiles/rebuild_cache.dir
+/home/mark/mark_scripts/cpp_practice/cluster/build/CMakeFiles/kmeans.dir
+/home/mark/mark_scripts/cpp_practice/cluster/build/CMakeFiles/dbscan.dir

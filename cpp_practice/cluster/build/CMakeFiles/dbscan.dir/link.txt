@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -pthread   CMakeFiles/dbscan.dir/src/dbscan.cpp.o  -o dbscan -rdynamic 
