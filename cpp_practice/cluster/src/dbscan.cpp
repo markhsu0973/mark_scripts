@@ -9,7 +9,9 @@ using namespace std;
 #define Eps 3 // Eps为邻域半径值
 #define MinPts 3 // 邻域密度阈值
 #define N 20 // 数据集包含N个对象
+#define point_x_y_max 20 //點的最大值
 
+double point_temp;
 double point[N][2]; // 保存所有的数据点
 vector<int> kernel_point; // 保存核心点在point[][]中的位置
 vector<int> border_point; // 保存边界点在point[][]中的位置
@@ -21,7 +23,11 @@ void init(int n) {
 	srand((unsigned)time(NULL));
 	for(int i=0; i<n; i++) {
 		for(int j=0; j<2; j++) {
-			point[i][j] = rand() % (N+1);
+			point_temp = rand() % (N+1);
+			while( !(point_temp <= point_x_y_max) ) {
+				point_temp = rand() % (N+1);
+			}
+			point[i][j] = point_temp;
 		}
 	}
 }
@@ -29,8 +35,7 @@ void init(int n) {
 int main(int argc, char** argv) {
 
 	// 初始化数据集
-	int n = N;
-	init(n);
+	init(N);
 
 	// 将所有点标记为核心点、边界点或噪声点
 	// 标记核心点
