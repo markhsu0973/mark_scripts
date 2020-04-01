@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -pthread   CMakeFiles/vector.dir/src/vector.cpp.o  -o vector -rdynamic 

@@ -7,9 +7,9 @@
 using namespace std;
 
 #define Eps 3 // Eps为邻域半径值
-#define MinPts 3 // 邻域密度阈值
-#define N 20 // 数据集包含N个对象
-#define point_x_y_max 20 //點的最大值
+#define MinPts 2 // 邻域密度阈值
+#define N 6 // 数据集包含N个对象
+#define point_x_y_max 10 //點的最大值
 
 double point_temp;
 double point[N][2]; // 保存所有的数据点
@@ -87,6 +87,7 @@ int main(int argc, char** argv) {
 		}
 	}
 
+	cout << "Eps = " << Eps << " MinPts = " << MinPts << endl;
 	// 将距离在Eps之内的核心点放在一个vector中
 	for(int i=0; i<kernel_point.size(); i++) {
 		int x = kernel_point[i];
@@ -94,13 +95,22 @@ int main(int argc, char** argv) {
 		record.push_back(x);
 		for(int j=i+1; j<kernel_point.size(); j++) {
 			int y = kernel_point[j];
-			if(pow(point[x][0]-point[y][0], 2)-pow(point[x][1]-point[y][1], 2)<pow(Eps, 2)) {
+			if(pow(point[x][0]-point[y][0], 2)+pow(point[x][1]-point[y][1], 2)<pow(Eps, 2)) {
 				record.push_back(y);
 			}
 		}
 		mid.push_back(record);
+		// cout << "push record into mid\n";
 	}
-
+	cout << "mid.size() = " << mid.size() << endl;
+	cout << "将距离在Eps之内的核心点放在一个vector中"<< endl;
+	for (int i = 0; i < mid.size(); i++) {
+		cout << "mid[" << i << "].size() = " << mid[i].size() << endl;
+		for (int j = 0; j < mid[i].size(); j++) {
+			cout << mid[i][j] << " ";
+		}
+		cout << endl;
+	}
 	// 合并vector
 	for(int i=0; i<mid.size(); i++) { // 对于mid中的每一行
 		// 判断该行是否已经添加进前面的某一行中
@@ -130,7 +140,13 @@ int main(int argc, char** argv) {
 		cluster.push_back(mid[i]);
 
 	}
-
+	cout << "合併vector" << endl;
+	for(int i=0; i<cluster.size(); i++) { // 对于每一行
+		for(int j=0; j<cluster[i].size(); j++) {
+			cout << cluster[i][j] << " ";
+		}
+		cout << endl;
+	}
 	// 删除cluster中的重复元素
 	for(int i=0; i<cluster.size(); i++) { // 对于每一行
 		for(int j=0; j<cluster[i].size(); j++) {
@@ -142,7 +158,13 @@ int main(int argc, char** argv) {
 			}
 		}
 	}
-
+	cout << "删除cluster中的重复元素" << endl;
+	for(int i=0; i<cluster.size(); i++) { // 对于每一行
+		for(int j=0; j<cluster[i].size(); j++) {
+			cout << cluster[i][j] << " ";
+		}
+		cout << endl;
+	}
 	// 至此，cluster中保存了各个簇，每个簇中有点对应在point[][]中的位置
 	// 将每个边界点指派到一个与之相关联的核心点的簇中
 	for(int i=0; i<border_point.size(); i++) { // 对于每一个边界点
@@ -162,7 +184,13 @@ int main(int argc, char** argv) {
 			}
 		}
 	}
-
+	cout << "添加border" << endl;
+	for(int i=0; i<cluster.size(); i++) { // 对于每一行
+		for(int j=0; j<cluster[i].size(); j++) {
+			cout << cluster[i][j] << " ";
+		}
+		cout << endl;
+	}
 
 	/*******************************************************************************************/
 	cout<<"All Points : "<<endl;

@@ -26,7 +26,7 @@ int main () {
 	if (bit_data_.button_start_1 == 1) {
 		cout << "bit_data_.button_start_1 == 1" << endl;
 	}
-	// cout << "bit_data_.button_start_1: " << unsigned(bit_data_.button_start_1) << endl;
-	cout << "bit_data_.button_start_1: " << bit_data_.button_start_1 << endl;
+	cout << "bit_data_.button_start_1: " << unsigned(bit_data_.button_start_1) << endl;
+	// cout << "bit_data_.button_start_1: " << bit_data_.button_start_1 << endl;
   return 0;
 }
