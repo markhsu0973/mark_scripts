@@ -44,6 +44,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/wait_for.dir/DependInfo.cmake"
   "CMakeFiles/thread.dir/DependInfo.cmake"
+  "CMakeFiles/thread_practice.dir/DependInfo.cmake"
+  "CMakeFiles/wait_for.dir/DependInfo.cmake"
   )

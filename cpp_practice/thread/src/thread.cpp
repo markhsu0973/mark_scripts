@@ -1,48 +1,66 @@
 #include <iostream>
+#include <string>
 #include <thread>
-#include <condition_variable>
 #include <mutex>
-#include <unistd.h>
+#include <condition_variable>
 
-bool thread_start_flag_ = false;
-bool thread_stop_flag_ = false;
+std::mutex mutex;
+std::condition_variable cv;
+std::string data;
+bool ready = false;  
+bool processed = false; 
+bool is_worker = false;
+void Worker() {
+  is_worker = true;
+  std::cout << "S2-1" << std::endl;
+  std::unique_lock<std::mutex> lock(mutex);
 
-void OutputValue()
-{
-	std::cout << "wait for start thread ! \n";
-	int i = 1;
-	while(!thread_start_flag_){
-		std::cout << i << " secs \n";
-		i++;
-		sleep(1);
-	}
+  std::cout << "S2-2" << std::endl;
+  cv.wait(lock, [] { return ready; });
+  std::cout << "S2-3" << std::endl;
 
-	std::cout << "thread loop \n";
-	int j = 1;
-	while(true){
-		std::cout << j << " secs \n";
-		j++;
-		sleep(1);
-		if (thread_stop_flag_){
-			return;
-		}
-	}
- 
-}
+  std::cout << "工作线程正在处理数据..." << std::endl;
 
-int main( int argc, char** argv )
-{
-	std::cout << "main loop\n";
-	std::cout << "creat a thread and after 3 secs thread will be start !! \n";
-	std::thread mThread1(OutputValue);
-	sleep(3);
-	thread_start_flag_ = true;
-	std::cout << "After 5 secs thread will be stop \n";
-	sleep(5);
-	thread_stop_flag_ = true;
-	if (mThread1.joinable()) {
-	  mThread1.join();    
-	}
+  std::this_thread::sleep_for(std::chrono::seconds(1));
+  data += " 已处理";
+
+  processed = true;
+  std::cout << "工作线程通知数据已经处理完毕。" << std::endl;
+
+  lock.unlock();
+
+  cv.notify_one();
+  is_worker = false;
+} 
+
+int main() {
+  // std::thread worker(Worker);
+
+  std::cout << "S1-1" << std::endl;
+  {
+    // std::lock_guard<std::mutex> lock(mutex);
+    std::cout << "主线程正在准备数据..." << std::endl;
+
+    std::this_thread::sleep_for(std::chrono::seconds(3));
+    data = "样本数据";
+    ready = true;
+    std::cout << "主线程通知数据已经准备完毕。" << std::endl;
+  }
+  std::cout << "S1-2" << std::endl;
+  cv.notify_one();
+  std::cout << "S1-3" << std::endl;
+
+  if (is_worker) {
+	{
+		std::unique_lock<std::mutex> lock(mutex);
+		cv.wait(lock, [] { return processed; });
+	} 	
+  }
+
+  std::cout << "S1-4" << std::endl;
+  std::cout << "回到主线程，数据 = " << data << std::endl;
+
+  // worker.join();
 
   return 0;
 }

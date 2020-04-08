@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/mark/mark_scripts/cpp_practice/thread/src/thread.cpp
+/home/mark/mark_scripts/cpp_practice/thread/src/prac.cpp
 iostream
 -
 string
 -
-thread
+boost/thread.hpp
 -
-mutex
+boost/thread/mutex.hpp
 -
-condition_variable
+boost/thread/condition.hpp
 -
 

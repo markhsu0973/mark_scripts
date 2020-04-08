@@ -5,9 +5,24 @@ using namespace std;
 
 //STL vector的几种清空容器（删除）办法
 
+void test_vec(int n) {
+	vector<int> vec_temp;
+	for (int i = 0; i < n; i++) {
+		vec_temp.push_back(i);
+	}
+	cout << "size = " << vec_temp.size() << endl;
+	for (int i = 0; i < vec_temp.size(); i++) {
+		cout << vec_temp[i] << endl;
+	}
+}
+
 void test()
 {
     vector<int> vecnum;
+    //
+    vector<int>().swap(vecnum);
+    cout << "old: size = " << vecnum.size() << " ; capacity = " << vecnum.capacity() << endl;
+    //
     vecnum.push_back(1);
     vecnum.push_back(2);
     vecnum.push_back(3);
@@ -57,7 +72,9 @@ void test()
 
 int main()
 {
-    test();
-    getchar();
+    // test();
+    test_vec(6);
+    test_vec(5);
+    test_vec(4);
     return 0;
 }

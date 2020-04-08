@@ -26,7 +26,7 @@ void read_value() {
   sleep(timeout);
   std::cout << "=== read_value End ===\n";
   END_read = clock();
-  // std::cout << "read_time：" << (END_read - START_read) / CLOCKS_PER_SEC << " S" << std::endl;
+  std::cout << "read_time：" << (END_read - START_read) / CLOCKS_PER_SEC << " S" << std::endl;
   cv.notify_one();
 }
 
@@ -41,10 +41,10 @@ int main ()
 
   std::mutex mtx;
   std::unique_lock<std::mutex> lck(mtx);
-  cv.wait_for(lck, std::chrono::seconds(5),[&] {return check_function();});
-  // while (cv.wait_for(lck,std::chrono::seconds(1))==std::cv_status::timeout) {
-  //   std::cout << '.';
-  // }
+  // cv.wait_for(lck, std::chrono::seconds(5),[&] {return check_function();});
+  while (cv.wait_for(lck,std::chrono::seconds(1))==std::cv_status::timeout) {
+    std::cout << '.';
+  }
   std::cout << "=== main End ===" << '\n';
 
   th.join();
