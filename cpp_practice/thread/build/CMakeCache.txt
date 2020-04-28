@@ -166,12 +166,6 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-thread_BINARY_DIR:STATIC=/home/mark/mark_scripts/cpp_practice/thread/build
-
-//Value Computed by CMake
-thread_SOURCE_DIR:STATIC=/home/mark/mark_scripts/cpp_practice/thread
-
-//Value Computed by CMake
 thread_practice_BINARY_DIR:STATIC=/home/mark/mark_scripts/cpp_practice/thread/build
 
 //Value Computed by CMake

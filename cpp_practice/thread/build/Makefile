@@ -111,6 +111,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named mutex
+
+# Build rule for target.
+mutex: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mutex
+.PHONY : mutex
+
+# fast build rule for target.
+mutex/fast:
+	$(MAKE) -f CMakeFiles/mutex.dir/build.make CMakeFiles/mutex.dir/build
+.PHONY : mutex/fast
+
+#=============================================================================
+# Target rules for targets named wait
+
+# Build rule for target.
+wait: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 wait
+.PHONY : wait
+
+# fast build rule for target.
+wait/fast:
+	$(MAKE) -f CMakeFiles/wait.dir/build.make CMakeFiles/wait.dir/build
+.PHONY : wait/fast
+
+#=============================================================================
 # Target rules for targets named thread
 
 # Build rule for target.
@@ -124,19 +150,6 @@ thread/fast:
 .PHONY : thread/fast
 
 #=============================================================================
-# Target rules for targets named thread_practice
-
-# Build rule for target.
-thread_practice: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 thread_practice
-.PHONY : thread_practice
-
-# fast build rule for target.
-thread_practice/fast:
-	$(MAKE) -f CMakeFiles/thread_practice.dir/build.make CMakeFiles/thread_practice.dir/build
-.PHONY : thread_practice/fast
-
-#=============================================================================
 # Target rules for targets named wait_for
 
 # Build rule for target.
@@ -148,6 +161,46 @@ wait_for: cmake_check_build_system
 wait_for/fast:
 	$(MAKE) -f CMakeFiles/wait_for.dir/build.make CMakeFiles/wait_for.dir/build
 .PHONY : wait_for/fast
+
+#=============================================================================
+# Target rules for targets named wait_for_prac
+
+# Build rule for target.
+wait_for_prac: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 wait_for_prac
+.PHONY : wait_for_prac
+
+# fast build rule for target.
+wait_for_prac/fast:
+	$(MAKE) -f CMakeFiles/wait_for_prac.dir/build.make CMakeFiles/wait_for_prac.dir/build
+.PHONY : wait_for_prac/fast
+
+src/mutex.o: src/mutex.cpp.o
+
+.PHONY : src/mutex.o
+
+# target to build an object file
+src/mutex.cpp.o:
+	$(MAKE) -f CMakeFiles/mutex.dir/build.make CMakeFiles/mutex.dir/src/mutex.cpp.o
+.PHONY : src/mutex.cpp.o
+
+src/mutex.i: src/mutex.cpp.i
+
+.PHONY : src/mutex.i
+
+# target to preprocess a source file
+src/mutex.cpp.i:
+	$(MAKE) -f CMakeFiles/mutex.dir/build.make CMakeFiles/mutex.dir/src/mutex.cpp.i
+.PHONY : src/mutex.cpp.i
+
+src/mutex.s: src/mutex.cpp.s
+
+.PHONY : src/mutex.s
+
+# target to generate assembly for a file
+src/mutex.cpp.s:
+	$(MAKE) -f CMakeFiles/mutex.dir/build.make CMakeFiles/mutex.dir/src/mutex.cpp.s
+.PHONY : src/mutex.cpp.s
 
 src/thread.o: src/thread.cpp.o
 
@@ -176,32 +229,32 @@ src/thread.cpp.s:
 	$(MAKE) -f CMakeFiles/thread.dir/build.make CMakeFiles/thread.dir/src/thread.cpp.s
 .PHONY : src/thread.cpp.s
 
-src/thread_practice.o: src/thread_practice.cpp.o
+src/wait.o: src/wait.cpp.o
 
-.PHONY : src/thread_practice.o
+.PHONY : src/wait.o
 
 # target to build an object file
-src/thread_practice.cpp.o:
-	$(MAKE) -f CMakeFiles/thread_practice.dir/build.make CMakeFiles/thread_practice.dir/src/thread_practice.cpp.o
-.PHONY : src/thread_practice.cpp.o
+src/wait.cpp.o:
+	$(MAKE) -f CMakeFiles/wait.dir/build.make CMakeFiles/wait.dir/src/wait.cpp.o
+.PHONY : src/wait.cpp.o
 
-src/thread_practice.i: src/thread_practice.cpp.i
+src/wait.i: src/wait.cpp.i
 
-.PHONY : src/thread_practice.i
+.PHONY : src/wait.i
 
 # target to preprocess a source file
-src/thread_practice.cpp.i:
-	$(MAKE) -f CMakeFiles/thread_practice.dir/build.make CMakeFiles/thread_practice.dir/src/thread_practice.cpp.i
-.PHONY : src/thread_practice.cpp.i
+src/wait.cpp.i:
+	$(MAKE) -f CMakeFiles/wait.dir/build.make CMakeFiles/wait.dir/src/wait.cpp.i
+.PHONY : src/wait.cpp.i
 
-src/thread_practice.s: src/thread_practice.cpp.s
+src/wait.s: src/wait.cpp.s
 
-.PHONY : src/thread_practice.s
+.PHONY : src/wait.s
 
 # target to generate assembly for a file
-src/thread_practice.cpp.s:
-	$(MAKE) -f CMakeFiles/thread_practice.dir/build.make CMakeFiles/thread_practice.dir/src/thread_practice.cpp.s
-.PHONY : src/thread_practice.cpp.s
+src/wait.cpp.s:
+	$(MAKE) -f CMakeFiles/wait.dir/build.make CMakeFiles/wait.dir/src/wait.cpp.s
+.PHONY : src/wait.cpp.s
 
 src/wait_for.o: src/wait_for.cpp.o
 
@@ -230,6 +283,33 @@ src/wait_for.cpp.s:
 	$(MAKE) -f CMakeFiles/wait_for.dir/build.make CMakeFiles/wait_for.dir/src/wait_for.cpp.s
 .PHONY : src/wait_for.cpp.s
 
+src/wait_for_prac.o: src/wait_for_prac.cpp.o
+
+.PHONY : src/wait_for_prac.o
+
+# target to build an object file
+src/wait_for_prac.cpp.o:
+	$(MAKE) -f CMakeFiles/wait_for_prac.dir/build.make CMakeFiles/wait_for_prac.dir/src/wait_for_prac.cpp.o
+.PHONY : src/wait_for_prac.cpp.o
+
+src/wait_for_prac.i: src/wait_for_prac.cpp.i
+
+.PHONY : src/wait_for_prac.i
+
+# target to preprocess a source file
+src/wait_for_prac.cpp.i:
+	$(MAKE) -f CMakeFiles/wait_for_prac.dir/build.make CMakeFiles/wait_for_prac.dir/src/wait_for_prac.cpp.i
+.PHONY : src/wait_for_prac.cpp.i
+
+src/wait_for_prac.s: src/wait_for_prac.cpp.s
+
+.PHONY : src/wait_for_prac.s
+
+# target to generate assembly for a file
+src/wait_for_prac.cpp.s:
+	$(MAKE) -f CMakeFiles/wait_for_prac.dir/build.make CMakeFiles/wait_for_prac.dir/src/wait_for_prac.cpp.s
+.PHONY : src/wait_for_prac.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -237,19 +317,27 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... thread"
-	@echo "... thread_practice"
-	@echo "... wait_for"
 	@echo "... rebuild_cache"
+	@echo "... mutex"
+	@echo "... wait"
+	@echo "... thread"
+	@echo "... wait_for"
+	@echo "... wait_for_prac"
+	@echo "... src/mutex.o"
+	@echo "... src/mutex.i"
+	@echo "... src/mutex.s"
 	@echo "... src/thread.o"
 	@echo "... src/thread.i"
 	@echo "... src/thread.s"
-	@echo "... src/thread_practice.o"
-	@echo "... src/thread_practice.i"
-	@echo "... src/thread_practice.s"
+	@echo "... src/wait.o"
+	@echo "... src/wait.i"
+	@echo "... src/wait.s"
 	@echo "... src/wait_for.o"
 	@echo "... src/wait_for.i"
 	@echo "... src/wait_for.s"
+	@echo "... src/wait_for_prac.o"
+	@echo "... src/wait_for_prac.i"
+	@echo "... src/wait_for_prac.s"
 .PHONY : help
 
 

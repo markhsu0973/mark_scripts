@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -pthread   CMakeFiles/wait_for_prac.dir/src/wait_for_prac.cpp.o  -o wait_for_prac -rdynamic 

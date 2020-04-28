@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -pthread   CMakeFiles/wait.dir/src/wait.cpp.o  -o wait -rdynamic 

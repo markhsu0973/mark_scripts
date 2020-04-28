@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -pthread   CMakeFiles/shift.dir/src/shift.cpp.o  -o shift -rdynamic 

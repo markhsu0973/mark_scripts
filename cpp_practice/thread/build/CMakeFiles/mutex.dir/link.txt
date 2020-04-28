@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -pthread   CMakeFiles/mutex.dir/src/mutex.cpp.o  -o mutex -rdynamic 

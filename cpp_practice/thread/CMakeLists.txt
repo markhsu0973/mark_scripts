@@ -17,5 +17,7 @@ else()
 endif()
 
 add_executable (thread src/thread.cpp)
-add_executable (thread_practice src/thread_practice.cpp)
+add_executable (wait src/wait.cpp)
 add_executable (wait_for src/wait_for.cpp)
+add_executable (wait_for_prac src/wait_for_prac.cpp)
+add_executable (mutex src/mutex.cpp)

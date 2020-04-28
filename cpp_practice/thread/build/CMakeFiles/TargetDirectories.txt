@@ -1,5 +1,7 @@
 /home/mark/mark_scripts/cpp_practice/thread/build/CMakeFiles/edit_cache.dir
-/home/mark/mark_scripts/cpp_practice/thread/build/CMakeFiles/thread.dir
-/home/mark/mark_scripts/cpp_practice/thread/build/CMakeFiles/thread_practice.dir
-/home/mark/mark_scripts/cpp_practice/thread/build/CMakeFiles/wait_for.dir
 /home/mark/mark_scripts/cpp_practice/thread/build/CMakeFiles/rebuild_cache.dir
+/home/mark/mark_scripts/cpp_practice/thread/build/CMakeFiles/mutex.dir
+/home/mark/mark_scripts/cpp_practice/thread/build/CMakeFiles/wait.dir
+/home/mark/mark_scripts/cpp_practice/thread/build/CMakeFiles/thread.dir
+/home/mark/mark_scripts/cpp_practice/thread/build/CMakeFiles/wait_for.dir
+/home/mark/mark_scripts/cpp_practice/thread/build/CMakeFiles/wait_for_prac.dir

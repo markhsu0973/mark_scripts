@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -pthread   CMakeFiles/crc.dir/src/crc.cpp.o  -o crc -rdynamic 
