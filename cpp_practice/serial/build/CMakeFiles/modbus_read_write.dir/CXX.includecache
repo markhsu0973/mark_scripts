@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mark/mark_scripts/cpp_practice/serial/src/modbus_read_write.cpp
+stdio.h
+-
+fcntl.h
+-
+unistd.h
+-
+termios.h
+-
+string.h
+-
+stdlib.h
+-
+

@@ -12,10 +12,46 @@ void test_vec(int n) {
 	}
 	cout << "size = " << vec_temp.size() << endl;
 	for (int i = 0; i < vec_temp.size(); i++) {
-		cout << vec_temp[i] << endl;
+		printf("%d ", vec_temp[i]);
 	}
+	cout << endl;
+	
+	for (auto iter = vec_temp.begin(); iter != vec_temp.end();) {
+		if (*iter != 2) {
+		  vec_temp.erase(iter);
+		} else {
+		  break;
+		}
+	}
+	
+	cout << "size = " << vec_temp.size() << endl;
+	for (int i = 0; i < vec_temp.size(); i++) {
+		printf("%d ", vec_temp[i]);
+	}
+	cout << endl;
+
+	for (int i = 0; i < vec_temp.size(); i++) {
+		if (vec_temp[i] == 8) {
+			if ((i + 2) >= vec_temp.size()) {
+				printf("fail\n");
+				break;
+			}
+			printf("find\n");
+			for (auto iter = (vec_temp.begin() + i + 3); iter != vec_temp.end();) {
+				vec_temp.erase(iter);
+			}
+			break;
+		}
+	}
+	cout << "size = " << vec_temp.size() << endl;
+	for (int i = 0; i < vec_temp.size(); i++) {
+		printf("%d ", vec_temp[i]);
+	}
+	cout << endl;
+
 }
 
+/*
 void test()
 {
     vector<int> vecnum;
@@ -69,12 +105,13 @@ void test()
     vector<int>().swap(vecnum);
     cout << "last: size = " << vecnum.size() << " ; capacity = " << vecnum.capacity() << endl;
 }
+*/
 
 int main()
 {
     // test();
-    test_vec(6);
-    test_vec(5);
-    test_vec(4);
+    test_vec(10);
+//    test_vec(5);
+//    test_vec(4);
     return 0;
 }

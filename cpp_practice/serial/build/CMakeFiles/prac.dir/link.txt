@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -pthread   CMakeFiles/prac.dir/src/prac.cpp.o  -o prac -rdynamic 

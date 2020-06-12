@@ -1,0 +1,7 @@
+/home/mark/mark_scripts/cpp_practice/serial/build/CMakeFiles/edit_cache.dir
+/home/mark/mark_scripts/cpp_practice/serial/build/CMakeFiles/rebuild_cache.dir
+/home/mark/mark_scripts/cpp_practice/serial/build/CMakeFiles/test.dir
+/home/mark/mark_scripts/cpp_practice/serial/build/CMakeFiles/Serial_TX.dir
+/home/mark/mark_scripts/cpp_practice/serial/build/CMakeFiles/Serial_RX.dir
+/home/mark/mark_scripts/cpp_practice/serial/build/CMakeFiles/serial_tx_rx.dir
+/home/mark/mark_scripts/cpp_practice/serial/build/CMakeFiles/modbus_read_write.dir

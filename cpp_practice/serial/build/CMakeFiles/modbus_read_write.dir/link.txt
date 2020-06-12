@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -pthread   CMakeFiles/modbus_read_write.dir/src/modbus_read_write.cpp.o  -o modbus_read_write -rdynamic 

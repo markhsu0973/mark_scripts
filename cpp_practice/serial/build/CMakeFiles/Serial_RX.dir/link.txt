@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -pthread   CMakeFiles/Serial_RX.dir/src/Serial_RX.cpp.o  -o Serial_RX -rdynamic 
