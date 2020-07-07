@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -pthread   CMakeFiles/unordered_map.dir/src/unordered_map.cpp.o  -o unordered_map -rdynamic 
