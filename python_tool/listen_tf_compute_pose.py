@@ -2,13 +2,15 @@
 import rospy
 import math
 import tf
+import tf.msg
+import geometry_msgs.msg
 
 if __name__ == '__main__':
     rospy.init_node('listen_tf_compute_pose')
 
     listener = tf.TransformListener()
 
-
+    pub_num = 0
     rate = rospy.Rate(10.0)
     while not rospy.is_shutdown():
         try:
@@ -52,5 +54,20 @@ if __name__ == '__main__':
         print '  yaw:  ', yaw
         print '  roll: ', roll
         print '  pitch:', pitch
+
+        if pub_num == 0:
+            pub_num = 1
+            px = trans[0]
+            py = trans[1]
+            pz = trans[2]
+            ptheta = yaw/57.3
+
+        tfname = "fake_tf"
+        br = tf.TransformBroadcaster()
+        br.sendTransform((px, py, pz),
+                         tf.transformations.quaternion_from_euler(0, 0, ptheta),
+                         rospy.Time.now(),
+                         tfname,
+                         "map")
 
         rate.sleep()
