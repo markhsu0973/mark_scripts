@@ -48,7 +48,7 @@ if __name__ == '__main__':
     try:
         rospy.init_node('goal_action_client_example')
 
-        with open("nav_goal.csv","r") as csvfile:
+        with open("nav_waypoint.csv","r") as csvfile:
 					reader = csv.reader(csvfile)
 					for goal in reader:
 						goal_action(float(goal[0]), float(goal[1]), float(goal[2]))
