@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['wistron_dock_qrcode_generator.py'],
-             pathex=['/home/mark/qrocde_generate'],
+             pathex=['/home/mark/mark_scripts/side_project/qrocde_generate'],
              binaries=[],
              datas=[],
              hiddenimports=['PIL._tkinter_finder'],
