@@ -89,7 +89,7 @@ print "right side line theta = ", math.atan(k2)* 57.3
 
 corner_side_theta = (abs(math.atan(k1)) + abs(math.atan(k2)))/2
 docking_heading = -(math.pi - corner_side_theta - (corner_theta/2))
-print docking_heading* 57.3
+print "docking_heading = ", docking_heading* 57.3
 
 
 ###绘图，看拟合效果###
@@ -99,13 +99,11 @@ plt.figure(figsize=(8,6))
 plt.scatter(Xi,Yi,color="blue",label="Left Side Point",linewidth=3) #画样本点
 plt.scatter(Xi_2,Yi_2,color="red",label="Right Side Point",linewidth=3) #画样本点
 plt.scatter(corner_x ,corner_y,color="black",label="Corner",linewidth=10) #画样本点
-plt.quiver(corner_x, corner_y, math.cos(docking_heading), math.sin(docking_heading), color='g', width=0.005) 
+plt.quiver(corner_x, corner_y, math.cos(docking_heading), math.sin(docking_heading), color='g', width=0.005, scale=5) 
 x=np.linspace(0,20,1000)
 y1=k1*x+b1
 y2=k2*x+b2
-# y3 = k3 * x + b3
 plt.plot(x,y1,color="cyan",label="Left Side Line",linewidth=2) #画拟合直线
 plt.plot(x,y2,color="pink",label="Right Side Line",linewidth=2) #画拟合直线
-# plt.plot(x,y3,color="black",label="Docking Heading Line",linewidth=2) #画拟合直线
 plt.legend()
 plt.show()
