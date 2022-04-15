@@ -7,10 +7,20 @@ from scipy.optimize import leastsq
 ###采样点(Xi,Yi)###
 # Xi=np.array([8.19,2.72,6.39,8.71,4.7,2.66,3.78])
 # Yi=np.array([7.01,2.78,6.47,6.71,4.1,4.23,4.05])
-Xi=np.array([8.19,2.72,6.39])
-Yi=np.array([7.01,2.78,6.47])
+# Xi=np.array([8.19,2.72,6.39])
+# Yi=np.array([7.01,2.78,6.47])
+Xi=np.array([1,2,3,4,5,6,7,8,9,10])
+Yi=np.array([1,2.1,3,4.1,5,6,7.1,8,9,10])
+# Xi=np.array([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19])
+# Yi=np.array([1,2.1,3,4.1,5,6,7.1,8,9,10,9,8,6.9,6,5.1,3.9,3,2.1,1])
 
-###需要拟合的函数func及误差error###
+# for i in range(len(Xi)):
+#     if i < len(Xi)-3:
+#         print "(",Xi[i],",",Yi[i],")"
+#         print Xi[i+3] - Xi[i+2]
+#         print Xi[i+1] - Xi[i]
+
+##需要拟合的函数func及误差error###
 def func(p,x):
     k,b=p
     return k*x+b
@@ -27,7 +37,8 @@ p0=[100,2]
 s="Test the number of iteration" #试验最小二乘法函数leastsq得调用几次error函数才能找到使得均方误差之和最小的k、b
 Para=leastsq(error,p0,args=(Xi,Yi)) #把error函数中除了p以外的参数打包到args中
 k,b=Para[0]
-print"k=",k,'\n',"b=",b
+# print"k=",k,'\n',"b=",b
+print "y =", k, "x +", b 
 
 ###绘图，看拟合效果###
 import matplotlib.pyplot as plt
