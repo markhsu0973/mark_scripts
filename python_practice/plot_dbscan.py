@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-print(__doc__)
+# print(__doc__)
 
 import numpy as np
 
@@ -22,6 +22,9 @@ X = StandardScaler().fit_transform(X)
 # #############################################################################
 # Compute DBSCAN
 db = DBSCAN(eps=0.3, min_samples=10).fit(X)
+print "#####",len(db.labels_)
+for i in range(len(db.labels_)):
+      print db.labels_[i], ", ",
 core_samples_mask = np.zeros_like(db.labels_, dtype=bool)
 core_samples_mask[db.core_sample_indices_] = True
 labels = db.labels_
