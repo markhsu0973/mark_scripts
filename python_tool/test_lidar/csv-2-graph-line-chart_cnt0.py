@@ -1,6 +1,3 @@
-#########################################
-#python csv-2-graph-line-chart.py folder_name#
-#########################################
 from csv import reader
 from matplotlib import pyplot as plt
 import sys, getopt
