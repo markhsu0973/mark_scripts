@@ -21,6 +21,9 @@ def test_pogo_ping():
             cmd_vel_pub.publish(move_cmd)
             cnt = cnt + 1
             rospy.sleep(0.1)
+        move_cmd.linear.x = 0.0
+        move_cmd.angular.z = 0.0
+        cmd_vel_pub.publish(move_cmd)
         cnt = 0
         while (cnt <= final_dis_cnt):
             move_cmd.linear.x = 0.01
