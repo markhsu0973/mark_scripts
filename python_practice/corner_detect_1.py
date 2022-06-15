@@ -4,6 +4,7 @@
 import numpy as np
 from scipy.optimize import leastsq
 import math
+import matplotlib.pyplot as plt
 
 def compute_angle(pt1, pt2, pt3):
     dif_x = pt2[0] - pt1[0]
@@ -50,7 +51,9 @@ for i in range(len(Xi_ori)):
         Xi_2 = np.append(Xi_2 , Xi_ori[i])
         Yi_2 = np.append(Yi_2, Yi_ori[i])
 
-
+plt.scatter(Xi,Yi,color="blue",label="Left Side Point",linewidth=3) #画样本点
+plt.scatter(Xi_2,Yi_2,color="red",label="Right Side Point",linewidth=3) #画样本点
+plt.show()
 
 #需要拟合的函数func及误差error###
 def func(p,x):
@@ -93,7 +96,7 @@ print "docking_heading = ", docking_heading* 57.3
 
 
 ###绘图，看拟合效果###
-import matplotlib.pyplot as plt
+
 
 plt.figure(figsize=(8,6))
 plt.scatter(Xi,Yi,color="blue",label="Left Side Point",linewidth=3) #画样本点

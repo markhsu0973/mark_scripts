@@ -4,6 +4,7 @@
 import numpy as np
 from scipy.optimize import leastsq
 import math
+import matplotlib.pyplot as plt
 
 def compute_angle(pt1, pt2, pt3):
     dif_x = pt2[0] - pt1[0]
@@ -25,7 +26,7 @@ def compute_angle(pt1, pt2, pt3):
 # Yi=np.array([1,2.1,3,4.1,5,6,7.1,8,9,10])
 # Xi=np.array([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19])
 # Yi=np.array([1,2.1,3,4.1,5,6,7.1,8,9,10,9,8,6.9,6,5.1,3.9,3,2.1,1])
-X_ori = np.array([[5,0.5],[6,1],[7,2.1],[8,3],[9,4.1],[10,5],[11,6],[12,7.1],[13,8],[14,9],[15,10],[16,9],[17,8],[18,6.9],[19,6],[20,5.1],[21,3.9],[22,3],[23,2]])
+X_ori = np.array([[1,0.5],[2,1],[3,2.1],[4,3],[5,4.1],[6,5],[7,6],[8,7.1],[9,8],[10,9],[11,10],[12,9],[13,8],[14,6.9],[15,6],[16,5.1],[17,3.9],[18,3],[19,2.1],[20,1]])
 # Xi_ori = np.array([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20])
 # Yi_ori=np.array([0.5,1,2.1,3,4.1,5,6,7.1,8,9,10,9,8,6.9,6,5.1,3.9,3,2.1,1])
 X = np.array([])
@@ -64,7 +65,9 @@ for i in range(len(X_ori)):
         else:
             X2 = np.vstack([X2,X_ori[i]])
 
-
+plt.scatter(X[:, 0], X[:, 1],color="blue",label="Left Side Point",linewidth=3) #画样本点
+plt.scatter(X2[:, 0], X2[:, 1],color="red",label="Right Side Point",linewidth=3) #画样本点
+plt.show()
 
 #需要拟合的函数func及误差error###
 def func(p,x):
@@ -107,7 +110,7 @@ print "docking_heading = ", docking_heading* 57.3
 
 
 ###绘图，看拟合效果###
-import matplotlib.pyplot as plt
+
 
 plt.figure(figsize=(8,6))
 plt.scatter(X[:, 0], X[:, 1],color="blue",label="Left Side Point",linewidth=3) #画样本点
