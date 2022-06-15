@@ -5,11 +5,11 @@ import matplotlib.pyplot as plt
 from sklearn.datasets import make_blobs, make_circles
 
 # 下面我們生成三組數據
-X1, y1 = make_circles(n_samples=100, factor=0.6, noise=0.05)
-X2, y2 = make_blobs(n_samples=100, n_features=2, centers=[[1.2, 1.2]],
-                    cluster_std=[[0.1]], random_state=9)
-# print y1
-X = np.concatenate((X1, X2))
+# X1, y1 = make_circles(n_samples=100, factor=0.6, noise=0.05)
+# X2, y2 = make_blobs(n_samples=100, n_features=2, centers=[[1.2, 1.2]],
+#                     cluster_std=[[0.1]], random_state=9)
+# # print y1
+# X = np.concatenate((X1, X2))
 # print type(X)
 # print X
 # print len(X)
@@ -23,8 +23,10 @@ X = np.concatenate((X1, X2))
 # plt.show()
 
 from sklearn.cluster import DBSCAN
-
-y_pred = DBSCAN(eps = 0.1).fit_predict(X)
+X = np.array([[1,10],[2,9],[3,9.5],[4,10.1],[5,0.5],[6,1],[7,2.1],[8,3],[9,4.1],[10,5],[11,6],[12,7.1],[13,8],[14,9],[15,10],[16,9],[17,8],[18,6.9],[19,6],[20,5.1],[21,3.9],[22,3],[23,2]])
+# plt.scatter(X[:, 0], X[:, 1], marker='o')
+# plt.show()
+y_pred = DBSCAN(eps = 3).fit_predict(X)
 # print type(y_pred)
 # print y_pred
 # print len(y_pred)
