@@ -49,6 +49,9 @@ for i in (-1, max_class_number):
         # print np_temp
 
 # print np_temp
+plt.scatter(X[:, 0], X[:, 1], marker='o')
+plt.show()
+
 plt.scatter(X[:, 0], X[:, 1], c=y_pred)
 plt.show()
 
