@@ -32,28 +32,15 @@ class ARFollower():
     def set_cmd_vel(self, msg):
 
         try:
-            marker = msg.markers[0]
-            if not self.target_visible:
-                rospy.loginfo("artag detected")
-            self.target_visible = True
+            for ar_tag in msg.markers:
+                detect_correct_id = False
+                marker = ar_tag
+                tag_1st_x = marker.pose.pose.position.x 
+                tag_1st_z = marker.pose.pose.position.z
+                tag_dis = math.sqrt(tag_1st_x * tag_1st_x + tag_1st_z * tag_1st_z)
+                print "tag_id = ", ar_tag.id, ", tag dis = ", tag_dis
         except:
-            if self.target_visible:
-                rospy.loginfo("artag not detected")
-            marker = False
             return
-        if self.target_visible:
-            x = marker.pose.pose.orientation.x 
-            y = marker.pose.pose.orientation.y 
-            z = marker.pose.pose.orientation.z 
-            w = marker.pose.pose.orientation.w
-
-            yaw = math.atan2(2*w*z + 2*x*y, 1 - 2*y*y - 2*z*z) * 57.3
-            pitch = math.asin(2*w*y - 2*z*x) * 57.3
-            roll = math.atan2(2*w*x + 2*y*z, 1 - 2*x*x - 2*y*y) * 57.3
-
-            rospy.logwarn("yaw = %f", yaw)
-            rospy.logwarn("pitch = %f", pitch)
-            rospy.logwarn("roll = %f", roll)
 
     # end of set_cmd_vel(self, msg)
 
