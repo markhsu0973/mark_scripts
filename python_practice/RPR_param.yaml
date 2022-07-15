@@ -1,11 +1,8 @@
 default:
   /move_base/TebLocalPlannerROS: 
-  /move_base/local_costmap:
   /move_base/global_costmap/short_obstacle_layer:
   /move_base/global_costmap/inflation_layer:
   /move_base/global_costmap/depth_scan_layer:
-  /move_base/global_costmap:
-  /move_base:
   
 slope:
   /move_base/TebLocalPlannerROS:
