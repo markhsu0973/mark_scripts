@@ -1,0 +1,9 @@
+cd project-directory/libraries/MyLibrary
+mkdir build
+cd build
+cmake ..
+make
+
+
+-------
+https://ncona.com/2019/03/building-a-cpp-project-with-cmake/
